@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Map from '../components/Map.js';
 import * as api from '../apis/api';
 import SearchBar from '../components/SearchBar.js';
-import Navbar from '../components/Navbar.js';
+
 const Home = () => {
     const [center, setCenter] = useState({lat: -3.745, lng: -38.523}); //default: toronto
 
@@ -20,7 +20,6 @@ const Home = () => {
 
     return (
         <div>
-            <Navbar/>   
             <SearchBar onSubmit={search} />
             <Map center={center} />      
         </div>
