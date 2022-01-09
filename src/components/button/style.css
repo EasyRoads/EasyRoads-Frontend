@@ -20,3 +20,10 @@
 .link-btn:hover {
   color: black;
 }
+
+.map-btn {
+  position: absolute;
+  /* bottom: 80px;
+  left: 310px; */
+  transform: translate(65%, -230%);
+}
