@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import { GoogleMap, useJsApiLoader, Polygon, Circle, Marker } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, Polygon, Circle, Marker, Polyline } from '@react-google-maps/api';
 
 import hazardousDrivingAreas from '../data/hazardous_driving_areas';
 import currLocation from '../assets/current-location.png';
 import Lv1 from '../assets/Lv1.png';
 import Lv2 from '../assets/Lv2.png';
-import Button from '../components/button/button.js';
-import style from '../pages/homeMapStartPage/style.module.css';
 
 const containerStyle = {
     width: '415px',
@@ -18,24 +16,6 @@ const Map = (props) => {
     // console.log(props.center);
 
     const level1Routes = [
-        [
-            { lat: 43.752741, lng: -79.361114 },
-            { lat: 43.742673, lng: -79.357792 },
-            { lat: 43.738025, lng: -79.363600 },
-            { lat: 43.742274, lng: -79.369093 },
-            { lat: 43.748055, lng: -79.368702 },
-            { lat: 43.750305, lng: -79.365030 },
-            { lat: 43.752454, lng: -79.365451 },
-        ],
-        [
-            { lat: 43.780759, lng: -79.406642 },
-            { lat: 43.782865, lng: -79.396085 },
-            { lat: 43.770345, lng: -79.391001 },
-            { lat: 43.768078, lng: -79.401338 },
-        ]
-    ];
-
-    const level2Routes = [
         [
             { lat: 43.747039, lng: -79.388995 },
             { lat: 43.750856, lng: -79.390631 },
@@ -63,16 +43,39 @@ const Map = (props) => {
         ]
     ];
 
+    const level2Routes = [
+        [
+            { lat: 43.752741, lng: -79.361114 },
+            { lat: 43.742673, lng: -79.357792 },
+            { lat: 43.738025, lng: -79.363600 },
+            { lat: 43.742274, lng: -79.369093 },
+            { lat: 43.748055, lng: -79.368702 },
+            { lat: 43.750305, lng: -79.365030 },
+            { lat: 43.752454, lng: -79.365451 },
+        ],
+        [
+            { lat: 43.780759, lng: -79.406642 },
+            { lat: 43.782865, lng: -79.396085 },
+            { lat: 43.770345, lng: -79.391001 },
+            { lat: 43.768078, lng: -79.401338 },
+        ]
+    ];
+
     const markerPosition = {
         lat: 43.742441,
         lng: -79.386132
     };
 
     const polylinePath = [
-        {lat: 43.742626, lng: -79.385321},
-        {lat: 43.743719, lng: -79.385428},
+        {lat: 43.742453, lng: -79.386132},
+        {lat: 43.742562, lng: -79.385713},
+        {lat: 43.742535, lng: -79.385329},
+        {lat: 43.743698, lng: -79.385397},
         {lat: 43.744002, lng: -79.383361},
-        {lat: -27.467, lng: 153.027}
+        {lat: 43.743994, lng: -79.383404},
+        {lat: 43.748084, lng: -79.384198},
+        {lat: 43.749789, lng: -79.378745},
+        {lat: 43.750495, lng: -79.375267}
     ];
 
     const textPositions = [
@@ -166,6 +169,7 @@ const Map = (props) => {
     const [color2, setColor2] = useState('#BF55F1');
     const [color3, setColor3] = useState('#FDBC15');
     const [color4, setColor4] = useState('#FDBC15');
+    const [polylineVisible, setPolylineVisible] = useState(false);
 
     const handleClick1 = (e) => {
         color1 === '#BF55F1' 
@@ -174,9 +178,11 @@ const Map = (props) => {
     };
 
     const handleClick2 = (e) => {
+        setPolylineVisible(true);
         color2 === '#BF55F1'
             ? setColor2('#58DBF8')
             : setColor2('#BF55F1')
+        
     };
 
     const handleClick3 = (e) => {
@@ -221,20 +227,25 @@ const Map = (props) => {
                     onClick={handleClick4}
                 />
                 <Marker
-                    icon={Lv1}
+                    icon={Lv2}
                     position={textPositions[0]}
                 />
                 <Marker
-                    icon={Lv1}
+                    icon={Lv2}
                     position={textPositions[1]}
                 />
                 <Marker
-                    icon={Lv2}
+                    icon={Lv1}
                     position={textPositions[2]}
                 />
                 <Marker
-                    icon={Lv2}
+                    icon={Lv1}
                     position={textPositions[3]}
+                />
+                <Polyline 
+                    path={polylinePath}
+                    options={{strokeColor: color2, fillOpacity: 0.55}}
+                    visible={polylineVisible}
                 />
                 {hazardousDrivingAreas.map((area, i) => 
                     <Circle

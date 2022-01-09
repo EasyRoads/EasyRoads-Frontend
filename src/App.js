@@ -8,7 +8,7 @@ import DrivingDetailPage from './pages/drivingDetailPage/drivingDetailPage';
 import DrivingHistoryPage from './pages/drivingHistoryPage/drivingHistoryPage';
 import HomeMapPage from './pages/homeMapPage/home-map-page';
 import HomeMapStartPage from './pages/homeMapStartPage/home-map-start-page';
-import MapPage from './pages/MapPage';
+import MapPage from './pages/mapPage/MapPage';
 
 function App() {
   return (
