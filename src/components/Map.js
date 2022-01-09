@@ -179,10 +179,11 @@ const Map = (props) => {
 
     const handleClick2 = (e) => {
         setPolylineVisible(true);
+        
         color2 === '#BF55F1'
             ? setColor2('#58DBF8')
             : setColor2('#BF55F1')
-        
+        props.sendBtnVisibility(true);
     };
 
     const handleClick3 = (e) => {
