@@ -9,8 +9,8 @@ const HomePage = () => {
       <p className='title'>Our suggestions</p>
       <LevelInfo className='level-info' />
       <WeatherInfo className='weather-info' />
-      <div className='container'>
-        <Button link='/home-map-page' label='Where to Drive' />
+      <div className='container home-btn-div'>
+        <Button link='/areas' label='Where to Drive?'/>
       </div>
     </div>
   );
