@@ -1,0 +1,17 @@
+#logo {
+  font-family: sofia-pro, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  color: #000000;
+}
+
+.user-profile,
+.user-history {
+  width: 30px;
+  height: 30px;
+  margin-right: 1rem;
+}
+#user-icons {
+  margin-left: 5rem;
+}

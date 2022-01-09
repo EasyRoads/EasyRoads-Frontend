@@ -1,0 +1,30 @@
+.container {
+  width: 307px;
+  font-family: Sofia Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.weather-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rainblack {
+  width: 43px;
+  height: 43px;
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  margin-top: 21px;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
