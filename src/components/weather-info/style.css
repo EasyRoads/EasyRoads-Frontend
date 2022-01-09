@@ -8,7 +8,9 @@
   letter-spacing: -0.02em;
   color: #000000;
 }
-
+.weather-info {
+  text-align: center;
+}
 .rainblack {
   width: 43px;
   height: 43px;

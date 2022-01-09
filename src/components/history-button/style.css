@@ -1,0 +1,16 @@
+.history-btn {
+  width: 335px;
+  height: 48px;
+  border: 2px solid #d3d3d3;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 50px;
+  font-family: sofia-pro, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  text-align: center;
+  color: #000000;
+  outline: none;
+  border: none;
+}

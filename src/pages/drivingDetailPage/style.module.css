@@ -1,0 +1,20 @@
+.map {
+  width: 335px;
+  height: 335px;
+}
+
+.detail {
+  text-align: center;
+}
+
+.title {
+  font-family: sofia-pro, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 29px;
+  margin-bottom: 16px;
+}
+.container {
+  margin-top: 90px;
+}

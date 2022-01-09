@@ -6,7 +6,6 @@
   box-sizing: border-box;
   border-radius: 10px;
   display: flex;
-
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -14,7 +13,7 @@
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  letter-spacing: -0.02em;
+  font-family: sofia-pro, sans-serif;
   color: #000000;
 }
 

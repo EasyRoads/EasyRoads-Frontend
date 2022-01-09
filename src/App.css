@@ -8,4 +8,9 @@ body {
 
 #root {
   background-color: white;
+  width: 414px;
+  height: 860px;
+  border-radius: 50px;
+  border: 0;
+  box-sizing: border-box;
 }

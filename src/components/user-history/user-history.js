@@ -4,7 +4,7 @@ import driveRoute from '../../assets/drive-route.png';
 import sun from '../../assets/sun.png';
 const UserHistory = () => {
   return (
-    <>
+    <div class='container'>
       <div className='history-info'>
         <img src={driveRoute} alt='' className='drive-route' />
         <span className='date'>
@@ -14,7 +14,7 @@ const UserHistory = () => {
         </span>
         <img src={sun} alt='' className='sun' />
       </div>
-    </>
+    </div>
   );
 };
 
