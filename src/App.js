@@ -20,7 +20,7 @@ function App() {
         <Route path='/home-map-start-page' element={<HomeMapStartPage />} />
         <Route path='/driving-detail' element={<DrivingDetailPage />} />
         <Route path='/driveHistory' element={<DrivingHistoryPage />} />
-        <Route path="/areas" element={<MapPage/>} />
+        <Route path="/areas" element={<MapPage />} />
       </Routes>
     </Router>
   );

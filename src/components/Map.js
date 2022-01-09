@@ -1,11 +1,16 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import { GoogleMap, useJsApiLoader, Polygon, Circle, Marker } from '@react-google-maps/api';
 
 import hazardousDrivingAreas from '../data/hazardous_driving_areas';
 import currLocation from '../assets/current-location.png';
+import Lv1 from '../assets/Lv1.png';
+import Lv2 from '../assets/Lv2.png';
+import Button from '../components/button/button.js';
+import style from '../pages/homeMapStartPage/style.module.css';
 
 const containerStyle = {
-    width: '400px',
+    width: '415px',
     height: '800px'
 };
 
@@ -70,14 +75,34 @@ const Map = (props) => {
         {lat: -27.467, lng: 153.027}
     ];
 
+    const textPositions = [
+        {lat: 43.745272, lng: -79.364093 },
+        {lat: 43.774755, lng: -79.398936 },
+        {lat: 43.756350, lng: -79.371459 },
+        {lat: 43.749469, lng: -79.397986 }
+    ];
+
     // const [centerOfPolygon, setCenterOfPolygon] = useState({});
 
     const options = {
         // fillColor: `${BF55F1}`,
-        fillOpacity: 0.7,
+        // fillOpacity: 0.9,
         // strokeColor: "#BF55F1",
         strokeOpacity: 1,
         strokeWeight: 2,
+        clickable: false,
+        draggable: false,
+        editable: false,
+        geodesic: false,
+        zIndex: 1
+    };
+
+    const labelOptions = {
+        fillColor: '#111111',
+        fillOpacity: 0,
+        // strokeColor: "#BF55F1",
+        strokeOpacity: 0,
+        // strokeWeight: 2,
         clickable: false,
         draggable: false,
         editable: false,
@@ -177,25 +202,40 @@ const Map = (props) => {
                 {/* child comps e.g. markers here */}
                 <Polygon 
                     paths={level1Routes[0]}
-                    options={options, {fillColor: color1, strokeColor: color1}}
+                    options={options, {fillColor: color1, strokeColor: color1, fillOpacity: 0.55}}
                     onClick={handleClick1}
                 />
                 <Polygon
                     paths={level1Routes[1]}
-                    options={options, {fillColor: color2, strokeColor: color2}}
+                    options={options, {fillColor: color2, strokeColor: color2, fillOpacity: 0.55}}
                     onClick={handleClick2}
                 />             
                 <Polygon 
                     paths={level2Routes[0]}
-                    options={options, {fillColor: color3, strokeColor: color3}}
+                    options={options, {fillColor: color3, strokeColor: color3, fillOpacity: 0.55}}
                     onClick={handleClick3}
                 />
                 <Polygon 
                     paths={level2Routes[1]}
-                    options={options, {fillColor: color4, strokeColor: color4}}
+                    options={options, {fillColor: color4, strokeColor: color4, fillOpacity: 0.55}}
                     onClick={handleClick4}
                 />
-                
+                <Marker
+                    icon={Lv1}
+                    position={textPositions[0]}
+                />
+                <Marker
+                    icon={Lv1}
+                    position={textPositions[1]}
+                />
+                <Marker
+                    icon={Lv2}
+                    position={textPositions[2]}
+                />
+                <Marker
+                    icon={Lv2}
+                    position={textPositions[3]}
+                />
                 {hazardousDrivingAreas.map((area, i) => 
                     <Circle
                         // onLoad={circleOnLoad} //optional
