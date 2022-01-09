@@ -141,7 +141,7 @@ const Map = (props) => {
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={props.center}
-                zoom={14}
+                zoom={13}
                 onLoad={onLoad}
                 onUnmount={onUnmount}
             >
