@@ -2,8 +2,8 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Home from './routes/Home';
-import MapPage from './routes/MapPage';
+import Home from './pages/Home';
+import MapPage from './pages/MapPage';
 
 function App() {
   return (
