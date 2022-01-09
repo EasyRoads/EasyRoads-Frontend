@@ -1,35 +1,33 @@
-.title{
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    letter-spacing: -0.02em;
-    color: #000000;
-    margin-top: 28px;
+.level {
+  width: 54.87px;
+  height: 55.52px;
 }
 
-.level{
-    width: 296px;
-    font-family: 'Poppins', sans-serif;
-    background: #FFFFFF;
-    border: 2px solid #DEDEDE;
-    box-sizing: border-box;
-    border-radius: 10px;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;   
+.rain {
+  width: 30px;
+  height: 30px;
 }
 
-.weather-rainy{
-    width:30px;
-    height:30px;
-    color:#58DBF8;    
+.level-info {
+  width: 296px;
+  height: 104px;
+  background: #ffffff;
+  border: 2px solid #dedede;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  /* padding: 23.48px; */
 }
 
-.time{
-
-}
-
-.location{
-    
+.time-location {
+  font-family: sofia-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: #000000;
+  padding-top: 5px;
 }

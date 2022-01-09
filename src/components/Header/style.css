@@ -1,13 +1,13 @@
-#logo{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    font-family: 'Poppins', sans-serif;
+#logo {
+  font-family: sofia-pro, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  color: #000000;
 }
 
-.user-icon, .user-history{
-    font-size: 32px;
-    color:black;
-
+.user-profile,
+.user-history {
+  width: 30px;
+  height: 30px;
 }

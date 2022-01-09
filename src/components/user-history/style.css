@@ -1,0 +1,29 @@
+.history-info {
+  width: 335px;
+  height: 104px;
+  background: #ffffff;
+  border: 2px solid #dedede;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-family: Sofia Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.drive-route {
+  width: 73px;
+  height: 73px;
+}
+
+.sun {
+  width: 30px;
+  height: 30px;
+}
