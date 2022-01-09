@@ -1,0 +1,28 @@
+.homepage {
+  background-image: url('../../assets/map-home-1.png');
+  background-size: cover;
+  height: 860px;
+  width: 100%;
+}
+
+.title {
+  font-family: sofia-pro, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 31px;
+  color: #000000;
+  margin-top: 28px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+
+.level-info {
+}
+
+.weather-info {
+  margin-top: 120px;
+}
+.custom-btn {
+  margin-top: 124px;
+}

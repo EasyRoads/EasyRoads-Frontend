@@ -1,0 +1,32 @@
+.level-one {
+  width: 55px;
+  height: 55px;
+}
+
+.rain {
+  width: 30px;
+  height: 30px;
+}
+
+.level-info {
+  width: 296px;
+  height: 104px;
+  background: #ffffff;
+  border: 2px solid #dedede;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.time-location {
+  font-family: sofia-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: #000000;
+  padding-top: 5px;
+}

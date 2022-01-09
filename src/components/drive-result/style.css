@@ -1,0 +1,14 @@
+.container {
+  font-family: sofia-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: #000000;
+}
+
+.row {
+  border-bottom: 2px solid #dedede;
+  width: 335px;
+  padding-bottom: 14px;
+  padding-top: 14px;
+}

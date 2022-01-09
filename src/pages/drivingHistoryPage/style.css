@@ -1,0 +1,14 @@
+.title {
+  font-family: sofia-pro, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 29px;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.history-info {
+  margin-top: 15px;
+  text-align: center;
+}
