@@ -4,7 +4,7 @@ import './style.css';
 const DriveResult = (props) => {
   return (
     <>
-      <div class='container'>
+      <div className='container'>
         <div className='row'>
           <div className='col-sm'>Time</div>
           <div className='col-sm'>58:20</div>

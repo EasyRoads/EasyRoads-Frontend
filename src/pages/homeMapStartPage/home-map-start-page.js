@@ -5,7 +5,11 @@ const RouteNavPage = (props) => {
   return (
     <div className={style.homeMapStartPage}>
       <div className={style.container}>
-        <Button label='Start' className={style.custombtn} />
+        <Button
+          link='/driving-detail'
+          label='Start'
+          className={style.custombtn}
+        />
       </div>
     </div>
   );

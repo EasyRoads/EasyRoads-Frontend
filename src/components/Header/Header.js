@@ -12,7 +12,7 @@ const Header = () => {
           <Navbar.Brand href='#home' id='logo'>
             EasyRoads
           </Navbar.Brand>
-          <Nav className='me-auto'>
+          <Nav className='me-auto' id='user-icons'>
             <Nav.Link href='#user-history'>
               <img src={history} alt=' ' className='user-profile' />
             </Nav.Link>

@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
-const Button = ({ type, label }) => {
+const Button = ({ type, label, link }) => {
   return (
     <button type={type} className='custom-btn'>
-      {label}
+      <Link to={link} className='link-btn'>
+        {label}
+      </Link>
     </button>
   );
 };

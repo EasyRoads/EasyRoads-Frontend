@@ -11,7 +11,7 @@ const DrivingDetailPage = (props) => {
       <img src={map} alt='' className={style.map} />
       <DriveResult />
       <DriveResultBottom className={style.container} />
-      <HistoryButton />
+      <HistoryButton link='/driveHistory' />
     </div>
   );
 };

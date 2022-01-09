@@ -13,7 +13,6 @@
 
 .weather {
   margin-right: 24px;
-  margin-top: 36px;
 }
 .level {
   width: 30px;
@@ -21,8 +20,8 @@
 }
 
 .large-level {
-  width: 147.31px;
-  height: 147px;
+  width: 140px;
+  height: 140px;
 }
 
 .text {

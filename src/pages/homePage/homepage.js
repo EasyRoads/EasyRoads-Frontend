@@ -7,10 +7,10 @@ const HomePage = () => {
   return (
     <div className='homepage'>
       <p className='title'>Our suggestions</p>
-      <LevelInfo className='level-page' />
-      <WeatherInfo className='weather-page' />
+      <LevelInfo className='level-info' />
+      <WeatherInfo className='weather-info' />
       <div className='container'>
-        <Button label='Where to Drive' />
+        <Button link='/home-map-page' label='Where to Drive' />
       </div>
     </div>
   );

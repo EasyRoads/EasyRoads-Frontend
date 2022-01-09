@@ -1,10 +1,14 @@
 import React from 'react';
 import './style.css';
-
-const HistoryButton = (props) => {
+import { Link } from 'react-router-dom';
+const HistoryButton = ({ link }) => {
   return (
     <>
-      <button className='history-btn'>See My History</button>
+      <button className='history-btn'>
+        <Link to={link} className='link-btn'>
+          See My History
+        </Link>
+      </button>
     </>
   );
 };
