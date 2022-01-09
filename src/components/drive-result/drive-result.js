@@ -3,24 +3,26 @@ import './style.css';
 
 const DriveResult = (props) => {
   return (
-    <div className='drive-result-info'>
-      <div className='row'>
-        <div className='column'>Time</div>
-        <div className='column'>58:20</div>
+    <>
+      <div class='container'>
+        <div className='row'>
+          <div className='col-sm'>Time</div>
+          <div className='col-sm'>58:20</div>
+        </div>
+        <div className='row'>
+          <div className='col-sm'>Location</div>
+          <div className='col-sm'>Bloor, Toronto</div>
+        </div>
+        <div className='row'>
+          <div className='col-sm'>Average Speed</div>
+          <div className='col-sm'>62km/h</div>
+        </div>
+        <div className='row'>
+          <div className='col-sm'>Weatjer</div>
+          <div className='col-sm'>Light Rain</div>
+        </div>
       </div>
-      <div className='row'>
-        <div className='column'>Location</div>
-        <div className='column'>Bloor, Toronto</div>
-      </div>
-      <div className='row'>
-        <div className='column'>Average Speed</div>
-        <div className='column'>62km/h</div>
-      </div>
-      <div className='row'>
-        <div className='column'>Weatjer</div>
-        <div className='column'>Light Rain</div>
-      </div>
-    </div>
+    </>
   );
 };
 

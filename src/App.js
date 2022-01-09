@@ -18,11 +18,9 @@ function App() {
       <LevelInfo />
       <WeatherInfo />
       <UserHistory />
-
       <DriveResult />
-      <Button label='Where to Drive' />
       <DriveResultBottom />
-
+      <Button label='Where to Drive' />
       <Routes>
         <Route path='/' element={<Home />} />
       </Routes>

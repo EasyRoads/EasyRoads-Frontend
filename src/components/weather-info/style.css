@@ -1,4 +1,4 @@
-.weather-info {
+.container {
   width: 307px;
   font-family: Sofia Pro;
   font-style: normal;
@@ -14,7 +14,7 @@
   height: 43px;
 }
 
-.label {
+.text {
   margin-top: 21px;
   font-family: sofia-pro, sans-serif;
   font-weight: 400;

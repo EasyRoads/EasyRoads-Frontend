@@ -1,3 +1,36 @@
+.bottom-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.weather-info {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  flex-direction: row;
+}
+
 .weather {
-  list-style: none;
+  margin-right: 24px;
+  margin-top: 36px;
+}
+.level {
+  width: 30px;
+  height: 30px;
+}
+
+.large-level {
+  width: 147.31px;
+  height: 147px;
+}
+
+.text {
+  margin-top: 36px;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
 }

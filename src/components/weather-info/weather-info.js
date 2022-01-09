@@ -4,9 +4,9 @@ import rainblack from '../../assets/rain-black.png';
 
 const WeatherInfo = () => {
   return (
-    <div className='weather-info'>
+    <div className='container'>
       <img src={rainblack} alt='' className='rainblack' />
-      <p className='label'>
+      <p className='text'>
         It's raining! A great chance to improve your driving skills
       </p>
     </div>

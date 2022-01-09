@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import profile from '../../assets/profile.png';
+import history from '../../assets/drive-history.png';
 import './style.css';
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
           </Navbar.Brand>
           <Nav className='me-auto'>
             <Nav.Link href='#user-history'>
-              <img src={profile} alt=' ' className='user-profile' />
+              <img src={history} alt=' ' className='user-profile' />
             </Nav.Link>
             <Nav.Link href='#user'>
               <img src={profile} alt=' ' className='user-history' />
