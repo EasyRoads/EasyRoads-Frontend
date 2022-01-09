@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { GoogleMap, useJsApiLoader, Polygon, Circle } from '@react-google-maps/api';
+import React, { useState } from "react";
+import { GoogleMap, useJsApiLoader, Polygon, Circle, Marker } from '@react-google-maps/api';
 
 import hazardousDrivingAreas from '../data/hazardous_driving_areas';
+import currLocation from '../assets/current-location.png';
 
 const containerStyle = {
     width: '400px',
-    height: '400px'
+    height: '800px'
 };
 
 const Map = (props) => {
@@ -57,10 +58,19 @@ const Map = (props) => {
         ]
     ];
 
-    const [centerOfPolygon, setCenterOfPolygon] = useState({});
-   
-    const level1 = '#BF55F1';
-    const level2 = '#FDBC15';
+    const markerPosition = {
+        lat: 43.742441,
+        lng: -79.386132
+    };
+
+    const polylinePath = [
+        {lat: 43.742626, lng: -79.385321},
+        {lat: 43.743719, lng: -79.385428},
+        {lat: 43.744002, lng: -79.383361},
+        {lat: -27.467, lng: 153.027}
+    ];
+
+    // const [centerOfPolygon, setCenterOfPolygon] = useState({});
 
     const options = {
         // fillColor: `${BF55F1}`,
@@ -73,7 +83,7 @@ const Map = (props) => {
         editable: false,
         geodesic: false,
         zIndex: 1
-    }
+    };
 
     const circleOptions = {
         strokeColor: 'rgb(180, 180, 180)',
@@ -87,45 +97,33 @@ const Map = (props) => {
         visible: true,
         radius: 70,  //6.4516
         zIndex: 1
-      }
-      
-    // const polygonLoaded = polygon => {
-    //     console.log("polygon: ", polygon);
-    // }
-
-    // const circleOnLoad = circle => {
-    //     console.log('Circle onLoad circle: ', circle)
-    // }
-    
-    // const circleOnUnmount = circle => {
-    //     console.log('Circle onUnmount circle: ', circle)
-    // }
+    };
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         language: "en",
         region: "ca"
-    })
+    });
 
     const [map, setMap] = React.useState(null)
 
-    useEffect(() => {
-        setTimeout(() => {
-            getCenterOfPolygon();
-        }, 200);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         getCenterOfPolygon();
+    //     }, 200);
         
-    }, []);
+    // }, []);
 
-    const getCenterOfPolygon = () => {
-        const bounds = new window.google.maps.LatLngBounds();
+    // const getCenterOfPolygon = () => {
+    //     const bounds = new window.google.maps.LatLngBounds();
         
-        // for (let i = 0; i < paths.length; i++) {
-        //     bounds.extend(paths[i]);
-        // }
-        // console.log(bounds.getCenter());
-        setCenterOfPolygon(bounds.getCenter());
-    }
+    //     // for (let i = 0; i < paths.length; i++) {
+    //     //     bounds.extend(paths[i]);
+    //     // }
+    //     // console.log(bounds.getCenter());
+    //     setCenterOfPolygon(bounds.getCenter());
+    // }
 
     const onLoad = React.useCallback(function callback(map) {
         // const bounds = new window.google.maps.LatLngBounds();
@@ -137,40 +135,82 @@ const Map = (props) => {
         setMap(null)
     }, []);
 
+    // const level1Color = ['#BF55F1', '#58DBF8'];
+    // const level2Color = ['#FDBC15', '#58DBF8'];
+    const [color1, setColor1] = useState('#BF55F1');
+    const [color2, setColor2] = useState('#BF55F1');
+    const [color3, setColor3] = useState('#FDBC15');
+    const [color4, setColor4] = useState('#FDBC15');
+
+    const handleClick1 = (e) => {
+        color1 === '#BF55F1' 
+            ? setColor1('#58DBF8')
+            : setColor1('#BF55F1')
+    };
+
+    const handleClick2 = (e) => {
+        color2 === '#BF55F1'
+            ? setColor2('#58DBF8')
+            : setColor2('#BF55F1')
+    };
+
+    const handleClick3 = (e) => {
+        color3 === '#FDBC15' 
+            ? setColor3('#58DBF8')
+            : setColor3('#FDBC15')
+    };
+
+    const handleClick4 = (e) => {
+        color4 === '#FDBC15'
+            ? setColor4('#58DBF8')
+            : setColor4('#FDBC15')
+    };
+    
     return isLoaded ? (
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={props.center}
-                zoom={13}
+                zoom={13.5}
                 onLoad={onLoad}
                 onUnmount={onUnmount}
             >
                 {/* child comps e.g. markers here */}
-                {level1Routes.map((route) =>
-                    <Polygon 
-                        paths={route}
-                        options={options, {fillColor: level1, strokeColor: level1}}
-                    />
-                )}
+                <Polygon 
+                    paths={level1Routes[0]}
+                    options={options, {fillColor: color1, strokeColor: color1}}
+                    onClick={handleClick1}
+                />
+                <Polygon
+                    paths={level1Routes[1]}
+                    options={options, {fillColor: color2, strokeColor: color2}}
+                    onClick={handleClick2}
+                />             
+                <Polygon 
+                    paths={level2Routes[0]}
+                    options={options, {fillColor: color3, strokeColor: color3}}
+                    onClick={handleClick3}
+                />
+                <Polygon 
+                    paths={level2Routes[1]}
+                    options={options, {fillColor: color4, strokeColor: color4}}
+                    onClick={handleClick4}
+                />
                 
-                {level2Routes.map((route) => 
-                    <Polygon 
-                        paths={route}
-                        options={options, {fillColor: level2, strokeColor: level2}}
-                    />
-                )}
-                
-                {hazardousDrivingAreas.map((area) => 
+                {hazardousDrivingAreas.map((area, i) => 
                     <Circle
-                    // onLoad={circleOnLoad} //optional
-                    // onUnmount={circleOnUnmount} //optional
-                    // required
-                    center={{lat: area.latitude, lng: area.longitude}}
-                    // required
-                    options={circleOptions}
+                        // onLoad={circleOnLoad} //optional
+                        // onUnmount={circleOnUnmount} //optional
+                        // required
+                        key={i}
+                        center={{lat: area.latitude, lng: area.longitude}}
+                        // required
+                        options={circleOptions}
                     />
                 )}
-                
+                <Marker
+                    position={markerPosition}
+                    icon={currLocation}
+                />
             </GoogleMap>
     ) : <></>
 }
